@@ -32,7 +32,7 @@ export function NewTransactionModal({ isOpen, onRequestClose }: ModalProps) {
     setTitle('')
     setAmount(0)
     setCategory('')
-    setType('')
+    setType('deposit')
 
 
     onRequestClose()
@@ -59,10 +59,14 @@ export function NewTransactionModal({ isOpen, onRequestClose }: ModalProps) {
           onChange={event => setTitle(event.target.value)}
         />
         <input
-          placeholder="Valor"
+          placeholder={new Intl.NumberFormat('pt-br', {
+            style: 'currency',
+            currency: 'BRL',
+          }).format(0.00)}
           type="number"
-          value={amount}
-          onChange={event => setAmount(Number(event.target.value))} />
+          min="0"
+          step="0.01"
+          onChange={event => { setAmount(Number(event.target.value)) }} />
 
         <TransactionTypeContainer>
           <RadioBox
