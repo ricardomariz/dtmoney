@@ -1,6 +1,8 @@
 Project running on:
 
-https://silly-euclid-abd010.netlify.app/
+https://dtmoney-ricardomariz.netlify.app/
 
 
 No persistent data available yet.
+
+Project based on Chapter 2 of Rocketseat's Ignite (ReactJS) bootcamp program.
