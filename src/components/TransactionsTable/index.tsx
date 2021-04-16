@@ -1,7 +1,6 @@
 import { useTransactions } from "../../hooks/useTransactions";
 import { Container } from "./styles";
 
-
 export function TransactionsTable() {
   const { transactions } = useTransactions()
 
@@ -14,6 +13,7 @@ export function TransactionsTable() {
             <th>Valor</th>
             <th>Categoria</th>
             <th>Data</th>
+            <th></th>
           </tr>
         </thead>
 
@@ -35,6 +35,9 @@ export function TransactionsTable() {
                   <td>{
                     new Intl.DateTimeFormat('pt-br').format(new Date(transaction.createdAt))
                   }</td>
+                  <td>
+                    <button type="button"><span>X</span></button>
+                  </td>
                 </tr>
               )
             })
