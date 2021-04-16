@@ -36,3 +36,25 @@ export const Container = styled.div`
     }
   }
 `
+
+export const DeleteButton = styled.button`
+  background: transparent;
+  border: 0;
+
+  span {
+    color: var(--red);
+    font-size: 1rem;
+    font-weight: 500;
+  }
+
+  transition: filter 0.2s;
+
+  &:hover {
+    filter: brightness(0.8)
+  }
+
+  &:focus{
+    outline: none;
+    background: transparent;
+  }
+`

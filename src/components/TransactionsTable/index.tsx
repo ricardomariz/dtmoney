@@ -1,8 +1,8 @@
 import { useTransactions } from "../../hooks/useTransactions";
-import { Container } from "./styles";
+import { Container, DeleteButton } from "./styles";
 
 export function TransactionsTable() {
-  const { transactions } = useTransactions()
+  const { transactions, deleteTransactions } = useTransactions()
 
   return (
     <Container>
@@ -36,7 +36,9 @@ export function TransactionsTable() {
                     new Intl.DateTimeFormat('pt-br').format(new Date(transaction.createdAt))
                   }</td>
                   <td>
-                    <button type="button"><span>X</span></button>
+                    <DeleteButton onClick={() => deleteTransactions(transaction.id)}>
+                      <span>X</span>
+                    </DeleteButton>
                   </td>
                 </tr>
               )
